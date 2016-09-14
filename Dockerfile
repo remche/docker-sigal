@@ -15,5 +15,6 @@ RUN pip install sigal
 
 COPY run.sh sigal.conf.py auth.conf auth.htpasswd ./
 
+ENV LANG C.UTF-8
 
 CMD ["./run.sh"]
