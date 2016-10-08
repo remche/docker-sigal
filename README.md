@@ -4,22 +4,22 @@ Docker image based on nginx official one for [sigal](http://sigal.saimon.org/en/
 
 Run with :
 
-    docker run -p 80:80 -v /path/to/your/pictures/:/pictures --name sigal-ct -d remche/sigal
+    docker run -p 80:80 -v /path/to/your/pictures/:/pictures --name sigal-ct -d remche/docker-sigal
 
 
 Default configuration use the galleria theme, keep original and put gallery in /usr/share/nginx/html. You can use a docker volume if you want it permanent :
 
-    docker run -p 80:80 -v /path/to/your/pictures/:/pictures -v sigal-html:/usr/share/nginx/html --name sigal-ct -d remche/sigal
+    docker run -p 80:80 -v /path/to/your/pictures/:/pictures -v sigal-html:/usr/share/nginx/html --name sigal-ct -d remche/docker-sigal
 
     
 If you want to override this conf, you can use your own sigal.conf.py :
 
-    docker run -p 80:80 -v /path/to/your/pictures/:/pictures -v/path/to/your/sigal.conf.py:/opt/sigal.conf.py --name sigal-ct -d remche/sigal
+    docker run -p 80:80 -v /path/to/your/pictures/:/pictures -v/path/to/your/sigal.conf.py:/opt/sigal.conf.py --name sigal-ct -d remche/docker-sigal
 
 
 You can set a basic authentication in htpasswd format by setting HTPASSWD env variable :
 
-    docker run -p 80:80 -v /path/to/your/pictures/:/pictures -e HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.' --name sigal-ct -d remche/sigal
+    docker run -p 80:80 -v /path/to/your/pictures/:/pictures -e HTPASSWD='foo:$apr1$odHl5EJN$KbxMfo86Qdve2FH4owePn.' --name sigal-ct -d remche/docker-sigal
 
 
 You might then use SSL with [nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy/).
