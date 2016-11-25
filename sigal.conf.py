@@ -121,7 +121,7 @@ orig_link = True
 # path relative to the source directory:
 # http://docs.python.org/2/library/fnmatch.html
 ignore_directories = []
-ignore_files = []
+ignore_files = ['*.mp4']
 
 # -------------
 # Video options
