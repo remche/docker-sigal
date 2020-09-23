@@ -7,5 +7,5 @@ if [[ $HTPASSWD ]]
 fi
 
 sigal build
-nginx -g "daemon off;"
+exec nginx -g "daemon off;"
 
